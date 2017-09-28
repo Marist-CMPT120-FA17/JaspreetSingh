@@ -10,31 +10,70 @@
       </h1>
 
       <script type="text/javascript">
+      var atNorth = false;
+      var atSouth = false;
+      var atEast = false;
+      var atWest = false;
+      var uscore = 0;
+
          function North() {
-            
+  
             var targetTextArea = document.getElementById("taMain");            
-            targetTextArea.value = "The player heads to the living room  and ends up seeing an axe on the bookcase, which he picks up.";               
-           
+            targetTextArea.value = "The player heads to the living room  and ends up seeing an axe on the bookcase, which he picks up."; 
+            if (atNorth == false) {
+              atNorth = true;
+              uscore = uscore + 5;
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }
+          else{
+            document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }
          }
          function South() {
             var targetTextArea = document.getElementById("taMain");   
 
              targetTextArea.value = "While heading for the steps, two zombies approach him making him use the only weapon in hand which is the axe.";
-         }    
+            if (atSouth == false) {
+              atSouth = true;
+              uscore = uscore + 5;
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }
+          else{
+            document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }   
+          }   
 
              function East() {
             var targetTextArea = document.getElementById("taMain");   
 
-             targetTextArea.value = "After killing the two zombies, the player stumbles upon a fully loaded AK-47 heading up the steps.";        
-
-         }
+             targetTextArea.value = "After killing the two zombies, the player stumbles upon a fully loaded AK-47 heading up the steps.";
+         if (atEast == false) {
+              atEast = true;
+              uscore = uscore + 5;
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }
+          else{
+            document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }   
+          }  
+        
 
          function West() {
             var targetTextArea = document.getElementById("taMain");   
 
-             targetTextArea.value = "When the player reaches the top of the steps, he kicks down the door to the bedroom to see over 20 zombies, the player decides to use Ak-47 until the bullets finish and all the zombies are dead.";        
+             targetTextArea.value = "When the player reaches the top of the steps, he kicks down the door to the bedroom to see over 20 zombies, the player decides to use Ak-47 until the bullets finish and all the zombies are dead.";   
 
-         }
+
+           if (atWest == false) {
+              atWest= true;
+              uscore = uscore + 5;
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }
+          else{
+            document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }   
+          }  
+             
       </script>
    </head>
     <a href = "mailto:jpsingh21597@gmail.com"> Jaspreet's Email </a> 
@@ -58,13 +97,13 @@
       <input type="button"
       		 value="West"
       		 onclick="West();" />		 
-                     
-
+                      
   <br>
   <br>
 
        <textarea rows="5" cols="20" id="taMain">The player starts at the front door of the house in search of weapons to kill the many zombies upstairs.
        </textarea>
+       <textarea  id="score"> Your Score: 0</textarea>
   </body>
 </html>
 
