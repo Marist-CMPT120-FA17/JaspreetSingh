@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>
+         Project 3
+      </title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+      <h1>
+        Zombie Killer
+      </h1>
+
+      <script type="text/javascript">
+      var pos = 2
+      var uscore = 0;      
+      var Loc1 = false;
+      var Loc2 = false;
+      var Loc3 = false;
+      var Loc4 = false;
+      var Loc5 = false;
+      var Loc6 = false;
+      
+
+
+          function playerLocation(){
+            var location = document.getElementById("Location").value;
+            location = location.toUpperCase();
+            if (location == "N") {
+                North();
+            } else if (location == "S"){
+                South(); 
+            } else if (location == "E"){
+                East();
+            } else if (location == "W"){
+                West();
+            } else{
+               var message = "No Location";
+               updateDisplay(message);
+            }
+              
+          }      
+
+         function North() {          
+        
+            if (pos == 2) {
+                pos = 5;
+                uscore = uscore + 5;
+                var message = "The player heads to the living room  and ends up seeing an axe on the bookcase, which he picks up.";
+                updateDisplay(message);
+                document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }
+          else if (pos == 1){
+                pos = 4;
+                uscore = uscore + 5;
+                var message = "The player heads to the living room and ends up seeing an axe on the bookcase, which he picks up." 
+                updateDisplay(message);
+                document.getElementById("score").innerHTML = "Your Score: " + uscore;
+              }
+          else if (pos == 3){
+                pos = 6;
+                uscore = uscore + 5;
+                var message = "Finally, the player walks out the front door of the house with excitement because he killed all the zombies."
+                updateDisplay(message);
+                document.getElementById("score").innerHTML = "Your Score: " + uscore;
+              }  
+          else {
+               var message = "WRONG WAY BRO!!"
+               updateDisplay(message);      
+               
+          }
+        }
+          
+         
+         function South() {
+
+            if (pos == 5) {
+                pos = 2;
+                uscore = uscore + 5;
+                var message = "The player goes back to the front door of the house in search of weapons to kill the many zombies upstairs.";
+                updateDisplay(message);
+                document.getElementById("score").innerHTML = "Your Score: " + uscore;
+              }
+            else if (pos == 4){ 
+                     pos = 1;
+                     uscore = uscore + 5;
+                   var message = "After killing the two zombies, the player stumbles upon a fully loaded AK-47 heading up the steps.";
+                   updateDisplay(message);
+                   document.getElementById("score").innerHTML = "Your Score: " + uscore;
+                 }
+            else if (pos == 6) {
+                     pos = 3;
+                     uscore = uscore + 5;
+                 var message = "When the player reaches the top of the steps, he kicks down the door to the bedroom to see over 20 zombies, the player decides to use Ak-47 until the bullets finish and all the zombies are dead.";
+                 updateDisplay(message);      
+                 document.getElementById("score").innerHTML = "Your Score: " + uscore;
+            }     
+              
+            else {
+                 var message = "WRONG WAY BRO!!"
+                 updateDisplay(message);
+            }
+
+              }
+        
+        function East() {
+            if (pos == 1){
+                pos = 2;
+              var message = "The player comes back to the front steps of the house before heading  upstairs.";
+               uscore = uscore + 5;
+              updateDisplay(message);
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+           } 
+          else if (pos == 2) {
+                   pos = 3;
+                   uscore = uscore + 5;
+              var message = "When the player reaches the top of the steps, he kicks down the door to the bedroom to see over 20 zombies, the player decides to use Ak-47 until the bullets finish and all the zombies are dead."
+              updateDisplay(message);
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }
+          else if (pos == 4) {
+                   pos = 5;
+                   uscore = uscore + 5;
+              var message = "The player heads to the living room  and ends up seeing an axe on the bookcase, which he picks up."
+              updateDisplay(message);   
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+          }
+          else if (pos == 5) {
+                   pos = 6;
+                   uscore = uscore + 5;
+              var message = "Finally, the player walks out the front door of the house with excitement because he killed all the zombies."   
+              updateDisplay (message)
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+               }
+          else {
+              var message = "WRONG WAY BRO!!"
+              updateDisplay(message);
+          }     
+        }
+        
+        function West(){ 
+           if (pos == 5){
+               pos = 4;
+               uscore = uscore + 5;
+              var message = "While heading for the steps, two zombies approach him making him use the only weapon in hand which is the axe.";
+              updateDisplay(message);
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+           }      
+           else if (pos == 6){
+                    pos = 5;
+                    uscore = uscore + 5;
+              var message = "The player heads to the living room  and ends up seeing an axe on the bookcase, which he picks up."  
+              updateDisplay(message);  
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;
+            }
+            else if (pos == 3){
+                     pos = 2;
+                     uscore = uscore + 5;
+              var message = "The player goes back to the front door of the house in search of weapons to kill the many zombies upstairs.";
+              updateDisplay(message); 
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;      
+            }
+            else if (pos == 2) {
+                     pos = 1;
+                     uscore = uscore + 5;
+              var message = "After killing the two zombies, the player stumbles upon a fully loaded AK-47 heading up the steps."; 
+              updateDisplay(message);  
+              document.getElementById("score").innerHTML = "Your Score: " + uscore;   
+            }    
+            else {
+              var message = "WRONG WAY BRO!!"
+              updateDisplay(message);
+            }
+          }  
+     
+        
+        function updateDisplay(message) {
+          var targetTextArea = document.getElementById("taMain");
+          targetTextArea.value = message;
+        }
+        
+      </script>
+   </head>
+    <a href = "mailto:jpsingh21597@gmail.com"> Jaspreet's Email </a> 
+
+    <br>
+    <br>
+     
+
+  <body>
+      <input type="button"
+             value="North"
+             id = "North" 
+             onclick="North()" />  <br>           
+
+      <input type="button"
+             value="South" 
+             id = "South"
+             onclick="South()" /> <br>
+      
+      <input type="button"
+      		 value="East"
+           id = "East"
+      		 onclick="East()" /> <br>
+
+      <input type="button"
+      		 value="West"
+           id = "West" 
+      		 onclick="West()" />		 
+                      
+  <br>
+  <br>
+
+       <textarea rows="2" cols="1" name="taMain" id = "Location" ></textarea>
+       <input type="submit" value="Submit" onclick="playerLocation()"/> <br>
+
+       <textarea  id="score"> Your Score: 0</textarea> <br>
+       <textarea rows="5" cols="20" id="taMain">The player starts at the front door of the house in search of weapons to kill the many zombies upstairs.
+       </textarea>
+       
+
+       
+  </body>
+</html>
