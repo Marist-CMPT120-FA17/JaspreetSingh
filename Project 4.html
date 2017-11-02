@@ -38,6 +38,9 @@
                 East();
             } else if (location == "W"){
                 West();
+             } else if (location == "HELP") {
+                var message = "If you need help, try typing in N, S, E, W to get started. Start off by visiting a location and heading to the next location to find materials.";
+                updateDisplay(message);
             } else {
                 alert("Only Commands are N,S,E,W");
             }
@@ -221,6 +224,10 @@
           var message = "The player starts at the front door of the house in search of weapons to kill the many zombies upstairs."
           updateDisplay(message);
          }
+        function weapons (){
+          
+        }
+                
         </script>
      </head>
      <body onload = "init()">
@@ -259,10 +266,10 @@
        <textarea rows="2" cols="10" name="taMain" id = "Location" ></textarea>
        <input type="button" value="Go" onclick="playerLocation()"/> <br>
 
-       <p id = "score">Score: 5</p><br>
+       <p id = "score">Score: 0</p><br>
        <textarea rows="5" cols="20" id="taMain">
        </textarea>
-       <img src = "gamemap">
+       <img src = "GameMap.jpg">
 
        
   </body>
