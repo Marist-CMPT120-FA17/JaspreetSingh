@@ -41,8 +41,7 @@
           }      
 
           function position() {
-          var desc = "";
-            switch(currentLoc) {
+            switch(pos) {
                 case 0: livingroom();      
                      break;
                 case 1: entrance();    
@@ -63,7 +62,7 @@
                     break;
                 case 9: frontsteps();                   
                     break;
-           default: desc = "You cannot go that way";
+           
   }
 }
 
@@ -71,17 +70,19 @@
         
             if (pos == 2) {
                 pos = 5;
-                uscore = uscore + 5;
+            position();
+                
           }
           else if (pos == 1){
-                desc = 4;
-                uscore = uscore + 5;
-              }
+                  pos = 4;
+            position();      
+     
+          }
           else if (pos == 3){
                 pos = 6;
-                uscore = uscore + 5;
+            position();   
 
-              }  
+          }  
           else {
                var message = "WRONG WAY BRO!!"
                updateDisplay(message);      
@@ -94,17 +95,18 @@
 
             if (pos == 5) {
                 pos = 2;
-                uscore = uscore + 5;
+                position();
                 }
             else if (pos == 4){ 
                      pos = 1;
-                     uscore = uscore + 5;
+                     position();
+                     
                   
                  }
             else if (pos == 6) {
                      pos = 3;
-                     uscore = uscore + 5;
-                
+                     position();
+                    
             }     
               
             else {
@@ -116,21 +118,24 @@
         
         function East() {
             if (pos == 1){
-                pos = 2; 
-                uscore = uscore + 5;
+                pos = 2;
+                position();               
               
            } 
           else if (pos == 2) {
                    pos = 3;
-                   uscore = uscore + 5;
+                   position();
+                   
           }
           else if (pos == 4) {
                    pos = 5;
-                   uscore = uscore + 5;
+                   position();
+                   
           }
           else if (pos == 5) {
                    pos = 6;
-                   uscore = uscore + 5;
+                   position();
+                   
                }
           else {
               var message = "WRONG WAY BRO!!"
@@ -141,22 +146,22 @@
         function West(){ 
            if (pos == 5){
                pos = 4;
-               uscore = uscore + 5;
+               position();
               
            }      
            else if (pos == 6){
                     pos = 5;
-                    uscore = uscore + 5;
+                    position();
               
             }
             else if (pos == 3){
                      pos = 2;
-                     uscore = uscore + 5;
-                  
+                     position();
+                     
             }
             else if (pos == 2) {
                      pos = 1;
-                     uscore = uscore + 5;
+                     position();        
                  
             }    
             else {
