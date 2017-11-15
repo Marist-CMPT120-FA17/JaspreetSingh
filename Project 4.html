@@ -25,8 +25,6 @@
       var Loc9 = false;
       var Loc10 = false;
       
-
-
           function playerLocation(){
             var location = document.getElementById("Location").value;
             location = location.toUpperCase();
@@ -43,9 +41,8 @@
                 updateDisplay(message);
             } else {
                 alert("Only Commands are N,S,E,W");
-            }
-              
-          }      
+            } 
+          }
 
           function position() {
             switch(pos) {
@@ -69,10 +66,9 @@
                     break;
                 case 9: outside();                   
                     break;
-          
-  }
-}
-
+           }         
+         } 
+ 
          function North() {          
         
             if (pos == 9) {
@@ -96,13 +92,12 @@
                 position();
            } 
           else {
-               var message = "WRONG WAY BRO!!"
+               var message = "WRONG WAY!!"
                updateDisplay(message);       
           }
         }
           
          function South() {
-
             if (pos == 0) {
                 pos = 9;
               position();
@@ -124,7 +119,7 @@
                    position();  
             }
             else {
-                 var message = "WRONG WAY BRO!!"
+                 var message = "WRONG WAY!!"
                  updateDisplay(message);
             }
           }
@@ -164,7 +159,7 @@
                 position();   
           }      
           else {
-              var message = "WRONG WAY BRO!!"
+              var message = "WRONG WAY!!"
               updateDisplay(message);
           }     
         }
@@ -206,7 +201,7 @@
                   position();   
             }
             else {
-              var message = "WRONG WAY BRO!!"
+              var message = "WRONG WAY!!"
               updateDisplay(message);
             }
           }  
@@ -220,8 +215,9 @@
         function updateScore() {
           document.getElementById("score").innerHTML = "Score: " + uscore;
         }
+
          function init() {
-          var message = "The player starts at the front door of the house in search of weapons to kill the many zombies upstairs."
+          var message = "The player starts at the front door of the house in search of weapons to kill the many zombies around the house.";
           updateDisplay(message);
          }
         function weapons (){
@@ -232,7 +228,7 @@
 
      </head>
      <body onload = "init()">
-   
+        
      
     <a href = "mailto:jpsingh21597@gmail.com"> Jaspreet's Email </a> 
 
@@ -252,27 +248,42 @@
              onclick="South()" /> <br>
       
       <input type="button"
-      		 value="East"
+           value="East"
            id = "East"
-      		 onclick="East()" /> <br>
+           onclick="East()" /> <br>
 
       <input type="button"
-      		 value="West"
+           value="West"
            id = "West" 
-      		 onclick="West()" />		 
+           onclick="West()" />   
+
+           <br>
+           <br>
+
+       <textarea rows="2" cols="10" name="taMain" id = "Location" ></textarea>
+       <input type="button" value="Go" onclick="playerLocation()"/> <br> 
+
+           <br>
+
+      <textarea rows="2" cols="10" name="Take" id = "Take_Weapon" >        
+      </textarea>
+      
+      <input type="button"
+           value="Take"
+           id = "Take_Weapon" 
+           onclick="Take_Weapon()" />
+
                       
   <br>
   <br>
-
-       <textarea rows="2" cols="10" name="taMain" id = "Location" ></textarea>
-       <input type="button" value="Go" onclick="playerLocation()"/> <br>
 
        <p id = "score">Score: 0</p><br>
        <textarea rows="5" cols="20" id="taMain">
        </textarea>
        <br>
        <br>
-    <style>
+
+         <style>
         table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
@@ -300,6 +311,7 @@
   <tr>
   <td>Machete</td>
     </table>
+ 
 
        <img src = "GameMap.jpg">
 
