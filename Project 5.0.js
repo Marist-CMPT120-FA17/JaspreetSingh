@@ -1,3 +1,5 @@
+// WORK IN PROGRESS!!!!!!
+
 function Location(id,name,description)
 {
 	this.id = id;
