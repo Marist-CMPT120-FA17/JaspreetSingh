@@ -130,20 +130,30 @@ function diningroom() {
  updateDisplay(gLocations[pos].description);
 }
 
+//Puzzle Element
+
 function outside() {
-  if (Loc9 == false) {
-    Loc9 = true;
-    uscore += 5;
-    updateScore();
-}
- pos = 9;
- updateDisplay(gLocations[pos].description);
+  if(gItems.length == 4)
+  {
+    if (Loc9 == false) {
+      Loc9 = true;
+      uscore += 5;
+      updateScore();
+    }
+    pos = 9;
+    updateDisplay(gLocations[pos].description + " All items have been collected.");
+  }
+  else{
+    updateDisplay("You need to collect all available items before you can go outside!! Go back and collect all the items.");
+  }
 }
 
 function WrongWay()
 {
   updateDisplay("WRONG WAY!!");
 }
+
+// Matrix Navigation
 
   var navMatrix = [//N S E W
           [WrongWay, outside, entrance, WrongWay],
