@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>
+          Project 5
+      </title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <style type = "text/css">
+      body {
+      background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX7010035.jpg");
+      }
+    </style>
+  </head>
+    
+  <body onload = "init()">  
+      <script src = "Final.js"> 
+      </script>
+       
+      <h1>
+      Zombie Killer
+      </h1>  
+      <script type="text/javascript">
+      var pos = 0;
+      var uscore = 0;      
+      var Loc1 = false;
+      var Loc2 = false;
+      var Loc3 = false;
+      var Loc4 = false;
+      var Loc5 = false;
+      var Loc6 = false;
+      var Loc7 = false;
+      var Loc8 = false;
+      var Loc9 = false;
+      var inventoryList = "Inventory:\n";
+
+          function Command(){
+            var inputCommand = document.getElementById("inputCommand").value;
+            inputCommand = inputCommand.toUpperCase();
+            if (inputCommand == "N") {
+                Navigate(pos,0);
+            } else if (inputCommand == "S"){
+                Navigate(pos,1); 
+            } else if (inputCommand == "E"){
+                Navigate(pos,2);
+            } else if (inputCommand == "W"){
+                Navigate(pos,3);
+            } else if (inputCommand == "T"){
+                TakeWeapon();
+            } else if (inputCommand == "I"){
+                Inventory();
+             } else if (inputCommand == "HELP") {
+                var message = "If you need help, try typing in N, S, E, W, T, or I to get started. Start off by visiting a location and heading to the next location to find materials.";
+                updateDisplay(message);
+            } else {
+                alert("Only Commands are N,S,E,W,T, or I");
+            } 
+          }
+
+        function updateDisplay(message) {
+          var targetTextArea = document.getElementById("taMain");
+          targetTextArea.value = message;
+        }
+      
+        function updateScore() {
+          document.getElementById("score").innerHTML = "Score: " + uscore;
+        }
+         function init() {
+          var message = "The player heads to the living room and ends up seeing an Axe on the bookcase, which he picks up. Take Axe.";
+          updateDisplay(message);
+         }
+        function TakeWeapon(){
+          if (gLocations[pos].item == undefined){
+            alert("There is no item to take!");
+          }
+          else{
+            gItems.push(gLocations[pos].item);
+            inventoryList += gItems[gItems.length-1].name + "\n";
+            gLocations[pos].item = undefined;
+            updateDisplay(gItems[gItems.length-1].description);
+          }
+        }
+        function Inventory(){
+          if (gItems.length == 0){
+            alert("No items in Inventory.\n");
+          }
+          else{
+            alert(inventoryList);
+          }
+        }
+                
+        </script>
+
+    
+     
+    <a href = "mailto:jpsingh21597@gmail.com"> Jaspreet's Email </a> 
+
+    <br>
+    <br>
+     
+
+  
+      <input type="button"
+             value="North"
+             id = "North" 
+             onclick="Navigate(pos,0)" />  <br>           
+
+      <input type="button"
+             value="South" 
+             id = "South"
+             onclick="Navigate(pos,1)" /> <br>
+      
+      <input type="button"
+           value="East"
+           id = "East"
+           onclick="Navigate(pos,2)" /> <br>
+
+      <input type="button"
+           value="West"
+           id = "West" 
+           onclick="Navigate(pos,3)" />  <br>  
+
+          <br>
+
+      <input type="button"
+           value="View Inventory List"
+           id = "Inventory" 
+           onclick="Inventory()" />   
+
+           <br>
+      
+       <p id = "score">Score: 0</p>
+
+       <textarea rows="2" cols="10" name="taMain" id = "inputCommand" ></textarea>
+       <input type="button" value="Submit" onclick="Command()"/>       
+      
+
+           <br>
+
+       <textarea rows="10" cols="35" id="taMain">
+       </textarea>
+
+        <input type="button"
+           value="TAKE WEAPON"
+           id = "Take" 
+           onclick="TakeWeapon()" /> 
+
+       <br>
+       <br>
+   
+     
+       <img src = "GameMap.jpg"  alt="">
+
+       
+</body> 
+</html>
