@@ -42,7 +42,7 @@
         
             if (loc == 6) {
                 loc = 1;
-                uscore = uscore += 5;
+                uscore += 5;
                 updateDisplay(message);
                 document.getElementById("score").innerHTML = "Your Score: " + uscore;
 
@@ -50,14 +50,14 @@
           }
           else if (loc == 5){
                    loc = 2;
-                uscore = uscore += 5;
+                uscore += 5;
                 updateDisplay(message);
                 document.getElementById("score").innerHTML = "Your Score: " + uscore;
                 descriptions();
               }
           else if (loc == 4){
                    loc = 3;
-                uscore = uscore += 5;
+                uscore += 5;
                 updateDisplay(message);
                 document.getElementById("score").innerHTML = "Your Score: " + uscore;
                 descriptions();
@@ -65,7 +65,8 @@
               }  
           else {
                var message = "WRONG WAY!!"
-               updateDisplay(message);      
+               updateDisplay(message); 
+    
                descriptions();
                  
           }
@@ -76,14 +77,14 @@
 
             if (loc == 1) {
                 loc = 6;
-                uscore = uscore += 5;
+                uscore += 5;
                 updateDisplay(message);
                 document.getElementById("score").innerHTML = "Your Score: " + uscore;
                 descriptions();
               }
             else if (loc == 2){ 
                      loc = 5;
-                     uscore = uscore += 5;
+                     uscore += 5;
                    updateDisplay(message);
                    document.getElementById("score").innerHTML = "Your Score: " + uscore;
                    descriptions();
@@ -91,7 +92,7 @@
 
             else if (loc == 3) {
                      loc = 4;
-                     uscore = uscore += 5;
+                     uscore += 5;
                
                  updateDisplay(message);      
                  document.getElementById("score").innerHTML = "Your Score: " + uscore;
@@ -101,6 +102,7 @@
             else {
                  var message = "WRONG WAY!!"
                  updateDisplay(message);
+
                  descriptions();
                 
                  
@@ -111,28 +113,28 @@
         function East() {
             if (loc == 1){
                 loc = 2;
-               uscore = uscore += 5;
+               uscore += 5;
               updateDisplay(message);
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
               descriptions();
            } 
           else if (loc == 2) {
                    loc = 3;
-                   uscore = uscore += 5;
+                   uscore += 5;
               updateDisplay(message);
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
               descriptions();
           }
           else if (loc == 6) {
                    loc = 5;
-                   uscore = uscore += 5;
+                   uscore += 5;
               updateDisplay(message);   
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
               descriptions();
           }
           else if (loc == 5) {
                    loc = 4;
-                   uscore = uscore += 5;
+                   uscore += 5;
               updateDisplay (message)
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
               descriptions();
@@ -141,6 +143,7 @@
           else {
               var message = "WRONG WAY!!"
               updateDisplay(message);
+              
               descriptions();
 
               
@@ -150,28 +153,28 @@
         function West(){ 
            if (loc == 3){
                loc = 2;
-               uscore = uscore += 5;
+               uscore += 5;
               updateDisplay(message);
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
               descriptions();
            }      
            else if (loc == 2){
                     loc = 1;
-                    uscore = uscore += 5;
+                    uscore += 5;
               updateDisplay(message);  
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
               descriptions();
             }
             else if (loc == 4){
                      loc = 5;
-                     uscore = uscore += 5;
+                     uscore += 5;
               updateDisplay(message); 
               document.getElementById("score").innerHTML = "Your Score: " + uscore;      
               descriptions();
             }
             else if (loc == 5) {
                      loc = 6;
-                     uscore = uscore += 5;
+                     uscore += 5;
               updateDisplay(message);  
               document.getElementById("score").innerHTML = "Your Score: " + uscore;   
               descriptions();
