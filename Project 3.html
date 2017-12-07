@@ -10,7 +10,7 @@
       </h1>
 
       <script type="text/javascript">
-      var pos = 2
+      var loc = 1
       var uscore = 0;      
       var Loc1 = false;
       var Loc2 = false;
@@ -32,144 +32,187 @@
                 East();
             } else if (location == "W"){
                 West();
-            } else{
-               var message = "No Location";
-               updateDisplay(message);
+            } else {
+                alert("Only Commands are N,n,S,s,E,e,W,w");
             }
               
           }      
 
          function North() {          
         
-            if (pos == 2) {
-                pos = 5;
-                uscore = uscore + 5;
-                var message = "The player heads to the living room  and ends up seeing an axe on the bookcase, which he picks up.";
+            if (loc == 6) {
+                loc = 1;
+                uscore = uscore += 5;
                 updateDisplay(message);
                 document.getElementById("score").innerHTML = "Your Score: " + uscore;
+
+                descriptions();
           }
-          else if (pos == 1){
-                pos = 4;
-                uscore = uscore + 5;
-                var message = "The player heads to the living room and ends up seeing an axe on the bookcase, which he picks up." 
+          else if (loc == 5){
+                   loc = 2;
+                uscore = uscore += 5;
                 updateDisplay(message);
                 document.getElementById("score").innerHTML = "Your Score: " + uscore;
+                descriptions();
               }
-          else if (pos == 3){
-                pos = 6;
-                uscore = uscore + 5;
-                var message = "Finally, the player walks out the front door of the house with excitement because he killed all the zombies."
+          else if (loc == 4){
+                   loc = 3;
+                uscore = uscore += 5;
                 updateDisplay(message);
                 document.getElementById("score").innerHTML = "Your Score: " + uscore;
+                descriptions();
+           
               }  
           else {
-               var message = "WRONG WAY BRO!!"
+               var message = "WRONG WAY!!"
                updateDisplay(message);      
-               
+               descriptions();
+                 
           }
         }
           
          
          function South() {
 
-            if (pos == 5) {
-                pos = 2;
-                uscore = uscore + 5;
-                var message = "The player goes back to the front door of the house in search of weapons to kill the many zombies upstairs.";
+            if (loc == 1) {
+                loc = 6;
+                uscore = uscore += 5;
                 updateDisplay(message);
                 document.getElementById("score").innerHTML = "Your Score: " + uscore;
+                descriptions();
               }
-            else if (pos == 4){ 
-                     pos = 1;
-                     uscore = uscore + 5;
-                   var message = "After killing the two zombies, the player stumbles upon a fully loaded AK-47 heading up the steps.";
+            else if (loc == 2){ 
+                     loc = 5;
+                     uscore = uscore += 5;
                    updateDisplay(message);
                    document.getElementById("score").innerHTML = "Your Score: " + uscore;
+                   descriptions();
                  }
-            else if (pos == 6) {
-                     pos = 3;
-                     uscore = uscore + 5;
-                 var message = "When the player reaches the top of the steps, he kicks down the door to the bedroom to see over 20 zombies, the player decides to use Ak-47 until the bullets finish and all the zombies are dead.";
+
+            else if (loc == 3) {
+                     loc = 4;
+                     uscore = uscore += 5;
+               
                  updateDisplay(message);      
                  document.getElementById("score").innerHTML = "Your Score: " + uscore;
+                 descriptions();
             }     
               
             else {
-                 var message = "WRONG WAY BRO!!"
+                 var message = "WRONG WAY!!"
                  updateDisplay(message);
-            }
+                 descriptions();
+                
+                 
+            }     
 
               }
         
         function East() {
-            if (pos == 1){
-                pos = 2;
-              var message = "The player comes back to the front steps of the house before heading  upstairs.";
-               uscore = uscore + 5;
+            if (loc == 1){
+                loc = 2;
+               uscore = uscore += 5;
               updateDisplay(message);
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
+              descriptions();
            } 
-          else if (pos == 2) {
-                   pos = 3;
-                   uscore = uscore + 5;
-              var message = "When the player reaches the top of the steps, he kicks down the door to the bedroom to see over 20 zombies, the player decides to use Ak-47 until the bullets finish and all the zombies are dead."
+          else if (loc == 2) {
+                   loc = 3;
+                   uscore = uscore += 5;
               updateDisplay(message);
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
+              descriptions();
           }
-          else if (pos == 4) {
-                   pos = 5;
-                   uscore = uscore + 5;
-              var message = "The player heads to the living room  and ends up seeing an axe on the bookcase, which he picks up."
+          else if (loc == 6) {
+                   loc = 5;
+                   uscore = uscore += 5;
               updateDisplay(message);   
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
+              descriptions();
           }
-          else if (pos == 5) {
-                   pos = 6;
-                   uscore = uscore + 5;
-              var message = "Finally, the player walks out the front door of the house with excitement because he killed all the zombies."   
+          else if (loc == 5) {
+                   loc = 4;
+                   uscore = uscore += 5;
               updateDisplay (message)
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
+              descriptions();
+                
                }
           else {
-              var message = "WRONG WAY BRO!!"
+              var message = "WRONG WAY!!"
               updateDisplay(message);
+              descriptions();
+
+              
           }     
         }
         
         function West(){ 
-           if (pos == 5){
-               pos = 4;
-               uscore = uscore + 5;
-              var message = "While heading for the steps, two zombies approach him making him use the only weapon in hand which is the axe.";
+           if (loc == 3){
+               loc = 2;
+               uscore = uscore += 5;
               updateDisplay(message);
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
+              descriptions();
            }      
-           else if (pos == 6){
-                    pos = 5;
-                    uscore = uscore + 5;
-              var message = "The player heads to the living room  and ends up seeing an axe on the bookcase, which he picks up."  
+           else if (loc == 2){
+                    loc = 1;
+                    uscore = uscore += 5;
               updateDisplay(message);  
               document.getElementById("score").innerHTML = "Your Score: " + uscore;
+              descriptions();
             }
-            else if (pos == 3){
-                     pos = 2;
-                     uscore = uscore + 5;
-              var message = "The player goes back to the front door of the house in search of weapons to kill the many zombies upstairs.";
+            else if (loc == 4){
+                     loc = 5;
+                     uscore = uscore += 5;
               updateDisplay(message); 
               document.getElementById("score").innerHTML = "Your Score: " + uscore;      
+              descriptions();
             }
-            else if (pos == 2) {
-                     pos = 1;
-                     uscore = uscore + 5;
-              var message = "After killing the two zombies, the player stumbles upon a fully loaded AK-47 heading up the steps."; 
+            else if (loc == 5) {
+                     loc = 6;
+                     uscore = uscore += 5;
               updateDisplay(message);  
               document.getElementById("score").innerHTML = "Your Score: " + uscore;   
+              descriptions();
             }    
             else {
-              var message = "WRONG WAY BRO!!"
+              var message = "WRONG WAY!!"
               updateDisplay(message);
+              descriptions();
+           
             }
+
+
           }  
+    function descriptions() {
+          switch (loc) {
+            case 1: 
+              var message = "The player starts at the front door of the house in search of weapons to kill the many zombies upstairs.";
+              updateDisplay(message);
+              break;
+            case 2: 
+              var message = "The player heads to the living room  and ends up seeing an axe on the bookcase, which he picks up.";
+              updateDisplay(message);
+              break;
+            case 3:
+              var message = "While heading for the steps, two zombies approach him making him use the only weapon in hand which is the axe.";
+              updateDisplay(message);
+              break;
+            case 4:
+              var message = "After killing the two zombies, the player stumbles upon a fully loaded AK-47 heading up the steps.";
+              updateDisplay(message);
+              break;
+            case 5:
+              var message = "When the player reaches the top of the steps, he kicks down the door to the bedroom to see over 20 zombies, the player decides to use Ak-47 until the bullets finish and all the zombies are dead.";
+              updateDisplay(message);
+              break;
+            case 6:
+              var message = "Finally, the player walks out the front door of the house with excitement because he killed all the zombies.";
+              updateDisplay(message);
+              break;
+          }
+         } 
      
         
         function updateDisplay(message) {
@@ -177,15 +220,18 @@
           targetTextArea.value = message;
         }
         
-      </script>
-   </head>
+        </script>
+        </head>
+     <body>
+   
+     
     <a href = "mailto:jpsingh21597@gmail.com"> Jaspreet's Email </a> 
 
     <br>
     <br>
      
 
-  <body>
+  
       <input type="button"
              value="North"
              id = "North" 
@@ -209,10 +255,10 @@
   <br>
   <br>
 
-       <textarea rows="2" cols="1" name="taMain" id = "Location" ></textarea>
-       <input type="submit" value="Submit" onclick="playerLocation()"/> <br>
+       <textarea rows="2" cols="10" name="taMain" id = "Location" ></textarea>
+       <input type="button" value="Go" onclick="playerLocation()"/> <br>
 
-       <textarea  id="score"> Your Score: 0</textarea> <br>
+         <p id = "score">Score: 0</p>
        <textarea rows="5" cols="20" id="taMain">The player starts at the front door of the house in search of weapons to kill the many zombies upstairs.
        </textarea>
        
