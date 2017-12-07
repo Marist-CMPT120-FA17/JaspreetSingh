@@ -163,7 +163,7 @@ function WrongWay()
           [WrongWay, bathroom, WrongWay, hallway],
           [room1, WrongWay, WrongWay, room2],
           [hallway, WrongWay, bathroom, attic],
-          [steps, WrongWay, room2, WrongWay],
+          [steps, WrongWay, room2, diningroom],
           [entrance, WrongWay, attic, outside],
           [livingroom, WrongWay, diningroom, WrongWay]
           ];
